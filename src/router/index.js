@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Router from 'vue-router'
