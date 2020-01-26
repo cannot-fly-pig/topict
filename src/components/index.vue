@@ -1,4 +1,3 @@
-/* eslint-disable */
 <template>
 	<div class="container" @click="suggest_hide">
 

@@ -6,7 +6,19 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+	data() {
+		return{
+			that: "",
+			size: "",
+			shape: "",
+			color: "",
+			where: "",
+			preposition: "",
+			img_that: "",
+			img_where: ""
+		}
+	}
 }
 </script>
 
