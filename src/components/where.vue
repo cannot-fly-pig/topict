@@ -16,8 +16,8 @@
 		<div class="row from-group">
 			<div class="col-8">
 				<select class="from-control" type="text" v-model="preposition">
-					<option value="in">on</option>
-					<option value="on">in</option>
+					<option value="on">on</option>
+					<option value="in">in</option>
 					<option value="under">under</option>
 					<option value="by">by</option>
 				</select>

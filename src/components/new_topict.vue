@@ -45,11 +45,10 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<button @click="run(that,where,size)" class="btn btn-primary" type="button">run</button>
-		</div>
+		<canvas height="500px" width="700px" class="canvas" id="canvas" ref="canvas"></canvas>
 
 	</div>
+
 </template>
 
 <script>
@@ -71,13 +70,49 @@
 			this.that = this.$parent.that
 			this.size = this.$parent.size
 			this.preposition = this.$parent.preposition
+			console.log(this.img_that != "" && this.img_where != "")
+		},
+		mounted() {
+			this.canvas = this.$refs.canvas
+			this.context = this.canvas.getContext("2d")
+			if (this.img_that != "" && this.img_where != "") this.run(this.that,this.where,this.size,this.preposition)
 		},
 		methods: {
-			run: function(that,where,size){
-				alert(that+where+size)
+			run: function(that,where,size,preposition){
+				switch (preposition) {
+					case "in":
+						this.draw_x(100,100,500,this.img_where)
+						this.draw_x(200,250,200,this.img_that)
+						break
+					case "on":
+						this.draw_y(200,100,150,this.img_that)
+						this.draw_y(100,250,250,this.img_where)
+						break
+
+				}
+			},
+			draw_x: function(x,y,xsize,path){
+				let ctx = this.context.canvas.getContext("2d");
+				let img = new Image()
+				img.src = path
+				let ysize = img.height * xsize / img.width
+				ctx.drawImage(img,x,y,xsize,ysize)
+			},
+			draw_y: function(x,y,ysize,path){
+				let ctx = this.context.canvas.getContext("2d");
+				let img = new Image()
+				img.src = path
+				let xsize = img.width * ysize / img.height
+				ctx.drawImage(img,x,y,xsize,ysize)
 			}
 		},
 		computed: {
 		}
 	})
 </script>
+
+<style>
+	.canvas {
+		display: none;
+	}
+</style>
