@@ -47,7 +47,7 @@
 
 	<div class="suggest-wrapper" v-if="seen">
 			<div class="suggest" v-for="item in search_list" @click="choice_img(item)">
-				<img :src="item.image_url" class="suggest_img">
+				<img :src="item.mini_image_url" class="suggest_img">
 				{{ item.name }}
 			</div>
 		</div>

@@ -71,6 +71,7 @@
 			this.size = this.$parent.size
 			this.preposition = this.$parent.preposition
 			console.log(this.img_that != "" && this.img_where != "")
+			if (this.img_that != "" && this.img_where != "") this.run()
 		},
 		mounted() {
 			this.canvas = this.$refs.canvas
@@ -78,18 +79,19 @@
 			if (this.img_that != "" && this.img_where != "") this.run(this.that,this.where,this.size,this.preposition)
 		},
 		methods: {
-			run: function(that,where,size,preposition){
-				switch (preposition) {
-					case "in":
-						this.draw_x(100,100,500,this.img_where)
-						this.draw_x(200,250,200,this.img_that)
-						break
-					case "on":
-						this.draw_y(200,100,150,this.img_that)
-						this.draw_y(100,250,250,this.img_where)
-						break
+			run: function(){
+				this.$router.push("/result").catch(err => {})
+			//	switch (preposition) {
+			//		case "in":
+			//			this.draw_x(100,100,500,this.img_where)
+			//			this.draw_x(200,250,200,this.img_that)
+			//			break
+			//		case "on":
+			//			this.draw_y(200,100,150,this.img_that)
+			//			this.draw_y(100,250,250,this.img_where)
+			//			break
 
-				}
+				//}
 			},
 			draw_x: function(x,y,xsize,path){
 				let ctx = this.context.canvas.getContext("2d");

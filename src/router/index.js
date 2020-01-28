@@ -6,7 +6,7 @@ import index from '@/components/index'
 import new_topict from '@/components/new_topict'
 import that from '@/components/that'
 import where from '@/components/where'
-//import result from '@/components/rresult'
+import result from '@/components/result'
 
 Vue.use(Router)
 Vue.use(BootstrapVue)
@@ -37,10 +37,10 @@ export default new Router({
       name: 'where',
       component: where,
     },
-	//	{
-	//		path: '/result',
-	//		name: 'result',
-	//		component: result
-	//	}
+		{
+			path: '/result',
+			name: 'result',
+			component: result
+		}
   ]
 })
