@@ -14,7 +14,7 @@ export default {
 			shape: "",
 			color: "",
 			where: "",
-			preposition: "",
+			preposition: "on",
 			img_that: "",
 			img_where: ""
 		}
